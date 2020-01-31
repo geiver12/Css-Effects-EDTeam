@@ -1,0 +1,606 @@
+body {
+  min-height: 100px;
+  width: 90%;
+  background-color: #fff;
+  display: flex;
+}
+
+.m-heart {
+  --color: rgb(10, 183, 252);
+  margin: auto;
+  font-size: 2em;
+  color: var(--color);
+  cursor: pointer;
+  position: absolute;
+  top: 7em;
+  left: 15em;
+}
+.m-heart.animate {
+  animation: exploit 1s;
+}
+
+@keyframes exploit {
+  to {
+    text-shadow: 95.1056516295px 30.9016994375px,161.803398875px 117.5570504585px,58.7785252292px 80.9016994375px,61.803398875px 190.211303259px,-1.0354294525px 100px,-61.803398875px 190.211303259px,-58.7785252293px 80.9016994375px,-161.8033988749px 117.5570504585px,-95.1056516288px 30.9016994376px,-199.9999999849px 2.0280890423px,-95.1056515682px -30.9016994283px,-161.8033980461px -117.5570503224px,-58.7785228287px -80.9016990102px,-61.8033744776px -190.2112985808px,0.0000553745px -99.9999886188px,61.803854529px -190.2112033226px,58.7793849643px -80.9014990018px,161.8094091891px -117.5555661146px,95.1154622789px -30.8991406783px,200.0602448084px 0.0165481905px;
+    color: transparent;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  --size: 500px;
+  height: var(--size);
+  width: var(--size);
+  position: absolute;
+  top: 1100px;
+  left: calc((500px - var(--size)/2));
+  right: calc((500px - var(--size)/2));
+  margin: auto;
+  animation: container 2s infinite linear;
+}
+@keyframes container {
+  to {
+    transform: rotate(-2turn);
+  }
+}
+
+.box {
+  --border1: hsl(0, 100, 50);
+  --border2: hsl(180, 100, 50);
+  width: 100%;
+  height: 100%;
+  border: 3px solid;
+  color: var(--border2);
+  position: absolute;
+  animation: border 2s infinite alternate linear;
+}
+@keyframes border {
+  to {
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+    color: var(--border2);
+  }
+}
+
+.box:nth-child(1) {
+  color: #ff1a00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(6deg) scale(0.9857142857);
+}
+
+.box:nth-child(2) {
+  color: #ff3300;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(12deg) scale(0.9714285714);
+}
+
+.box:nth-child(3) {
+  color: #ff4d00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(18deg) scale(0.9571428571);
+}
+
+.box:nth-child(4) {
+  color: #ff6600;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(24deg) scale(0.9428571429);
+}
+
+.box:nth-child(5) {
+  color: #ff8000;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(30deg) scale(0.9285714286);
+}
+
+.box:nth-child(6) {
+  color: #ff9900;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(36deg) scale(0.9142857143);
+}
+
+.box:nth-child(7) {
+  color: #ffb300;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(42deg) scale(0.9);
+}
+
+.box:nth-child(8) {
+  color: #ffcc00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(48deg) scale(0.8857142857);
+}
+
+.box:nth-child(9) {
+  color: #ffe600;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(54deg) scale(0.8714285714);
+}
+
+.box:nth-child(10) {
+  color: yellow;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(60deg) scale(0.8571428571);
+}
+
+.box:nth-child(11) {
+  color: #e6ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(66deg) scale(0.8428571429);
+}
+
+.box:nth-child(12) {
+  color: #ccff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(72deg) scale(0.8285714286);
+}
+
+.box:nth-child(13) {
+  color: #b3ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(78deg) scale(0.8142857143);
+}
+
+.box:nth-child(14) {
+  color: #99ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(84deg) scale(0.8);
+}
+
+.box:nth-child(15) {
+  color: #80ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(90deg) scale(0.7857142857);
+}
+
+.box:nth-child(16) {
+  color: #66ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(96deg) scale(0.7714285714);
+}
+
+.box:nth-child(17) {
+  color: #4dff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(102deg) scale(0.7571428571);
+}
+
+.box:nth-child(18) {
+  color: #33ff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(108deg) scale(0.7428571429);
+}
+
+.box:nth-child(19) {
+  color: #1aff00;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(114deg) scale(0.7285714286);
+}
+
+.box:nth-child(20) {
+  color: lime;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(120deg) scale(0.7142857143);
+}
+
+.box:nth-child(21) {
+  color: #00ff1a;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(126deg) scale(0.7);
+}
+
+.box:nth-child(22) {
+  color: #00ff33;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(132deg) scale(0.6857142857);
+}
+
+.box:nth-child(23) {
+  color: #00ff4d;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(138deg) scale(0.6714285714);
+}
+
+.box:nth-child(24) {
+  color: #00ff66;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(144deg) scale(0.6571428571);
+}
+
+.box:nth-child(25) {
+  color: #00ff80;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(150deg) scale(0.6428571429);
+}
+
+.box:nth-child(26) {
+  color: #00ff99;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(156deg) scale(0.6285714286);
+}
+
+.box:nth-child(27) {
+  color: #00ffb3;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(162deg) scale(0.6142857143);
+}
+
+.box:nth-child(28) {
+  color: #00ffcc;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(168deg) scale(0.6);
+}
+
+.box:nth-child(29) {
+  color: #00ffe6;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(174deg) scale(0.5857142857);
+}
+
+.box:nth-child(30) {
+  color: aqua;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(180deg) scale(0.5714285714);
+}
+
+.box:nth-child(31) {
+  color: #00e6ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(186deg) scale(0.5571428571);
+}
+
+.box:nth-child(32) {
+  color: #00ccff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(192deg) scale(0.5428571429);
+}
+
+.box:nth-child(33) {
+  color: #00b3ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(198deg) scale(0.5285714286);
+}
+
+.box:nth-child(34) {
+  color: #0099ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(204deg) scale(0.5142857143);
+}
+
+.box:nth-child(35) {
+  color: #0080ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(210deg) scale(0.5);
+}
+
+.box:nth-child(36) {
+  color: #0066ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(216deg) scale(0.4857142857);
+}
+
+.box:nth-child(37) {
+  color: #004dff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(222deg) scale(0.4714285714);
+}
+
+.box:nth-child(38) {
+  color: #0033ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(228deg) scale(0.4571428571);
+}
+
+.box:nth-child(39) {
+  color: #001aff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(234deg) scale(0.4428571429);
+}
+
+.box:nth-child(40) {
+  color: blue;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(240deg) scale(0.4285714286);
+}
+
+.box:nth-child(41) {
+  color: #1a00ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(246deg) scale(0.4142857143);
+}
+
+.box:nth-child(42) {
+  color: #3300ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(252deg) scale(0.4);
+}
+
+.box:nth-child(43) {
+  color: #4d00ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(258deg) scale(0.3857142857);
+}
+
+.box:nth-child(44) {
+  color: #6600ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(264deg) scale(0.3714285714);
+}
+
+.box:nth-child(45) {
+  color: #8000ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(270deg) scale(0.3571428571);
+}
+
+.box:nth-child(46) {
+  color: #9900ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(276deg) scale(0.3428571429);
+}
+
+.box:nth-child(47) {
+  color: #b300ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(282deg) scale(0.3285714286);
+}
+
+.box:nth-child(48) {
+  color: #cc00ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(288deg) scale(0.3142857143);
+}
+
+.box:nth-child(49) {
+  color: #e600ff;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(294deg) scale(0.3);
+}
+
+.box:nth-child(50) {
+  color: fuchsia;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(300deg) scale(0.2857142857);
+}
+
+.box:nth-child(51) {
+  color: #ff00e6;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(306deg) scale(0.2714285714);
+}
+
+.box:nth-child(52) {
+  color: #ff00cc;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(312deg) scale(0.2571428571);
+}
+
+.box:nth-child(53) {
+  color: #ff00b3;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(318deg) scale(0.2428571429);
+}
+
+.box:nth-child(54) {
+  color: #ff0099;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(324deg) scale(0.2285714286);
+}
+
+.box:nth-child(55) {
+  color: #ff0080;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(330deg) scale(0.2142857143);
+}
+
+.box:nth-child(56) {
+  color: #ff0066;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(336deg) scale(0.2);
+}
+
+.box:nth-child(57) {
+  color: #ff004d;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(342deg) scale(0.1857142857);
+}
+
+.box:nth-child(58) {
+  color: #ff0033;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(348deg) scale(0.1714285714);
+}
+
+.box:nth-child(59) {
+  color: #ff001a;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(354deg) scale(0.1571428571);
+}
+
+.box:nth-child(60) {
+  color: red;
+  --border2: hsl( $a*6+180, 100, 50);
+  transform: rotate(360deg) scale(0.1428571429);
+}
+
+.smartphone-viewport {
+  --unit: 60px;
+  width: calc(var(--unit)*16);
+  height: calc(var(--unit)*9);
+  top: 400px;
+  position: relative;
+  background: url(https://www.viajejet.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada-1440x810.jpg) center center/cover;
+  overflow: hidden;
+  box-shadow: 0 20px 20px -10px #000;
+  margin: auto;
+}
+.smartphone-viewport::before {
+  content: "Practices Makes Perfect";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #040e05;
+  font-size: 4em;
+  z-index: 10;
+  font-family: Open Sans;
+}
+.smartphone-viewport::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+:root {
+  --animation-time: .3s;
+}
+
+.float-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #33bbff;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  transition: transform var(--animation-time);
+  cursor: pointer;
+}
+.float-button.pulsed {
+  transform: rotate(45deg);
+  background: #0099e6;
+}
+.float-button::before, .float-button::after {
+  position: absolute;
+  width: 40%;
+  height: 4%;
+  content: "";
+  top: 49%;
+  left: 30%;
+  background: #fff;
+}
+.float-button::after {
+  transform: rotate(90deg);
+}
+
+.circular-menu {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  background: #33bbff;
+  border-radius: 50%;
+  transform: scale(0) rotate(-360deg);
+  transition: all var(--animation-time);
+  opacity: 0;
+  z-index: 50;
+  bottom: -5.5rem;
+  right: -5.5rem;
+}
+.circular-menu.expand {
+  transform: scale(1) rotate(0);
+  opacity: 1;
+}
+.circular-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.5rem;
+}
+.circular-menu i {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  color: #ffffff;
+}
+.circular-menu li {
+  position: absolute;
+  width: 2rem;
+  top: 2rem;
+  left: calc(50% - 1rem);
+  transform-origin: center 6rem;
+  text-align: center;
+}
+
+.circular-menu li:nth-child(2) {
+  transform: rotate(-30deg);
+}
+.circular-menu li:nth-child(2) i {
+  transform: rotate(30deg);
+}
+
+.circular-menu li:nth-child(3) {
+  transform: rotate(-60deg);
+}
+.circular-menu li:nth-child(3) i {
+  transform: rotate(60deg);
+}
+
+.circular-menu li:nth-child(4) {
+  transform: rotate(-90deg);
+}
+.circular-menu li:nth-child(4) i {
+  transform: rotate(90deg);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,277 @@
+@function pow($number, $exp) {
+    $value: 1;
+    @if $exp>0 {
+        @for $i from 1 through $exp {
+            $value: $value * $number;
+        }
+    }
+    @else if $exp < 0 {
+        @for $i from 1 through -$exp {
+            $value: $value / $number;
+        }
+    }
+    @return $value;
+}
+
+@function fact($number) {
+    $value: 1;
+    @if $number>0 {
+        @for $i from 1 through $number {
+            $value: $value * $i;
+        }
+    }
+    @return $value;
+}
+
+@function pi() {
+    @return 3.14159265359;
+}
+
+@function rad($angle) {
+    $unit: unit($angle);
+    $unitless: $angle / ($angle * 0 + 1);
+    // If the angle has 'deg' as unit, convert to radians.
+    @if $unit==deg {
+        $unitless: $unitless / 180 * pi();
+    }
+    @return $unitless;
+}
+
+@function sin($angle) {
+    $sin: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+    }
+    @return $sin;
+}
+
+@function cos($angle) {
+    $cos: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+    }
+    @return $cos;
+}
+
+@function tan($angle) {
+    @return sin($angle) / cos($angle);
+}
+
+body {
+    min-height: 100px;
+    width: 90%;
+    background-color: #fff;
+    display: flex;
+}
+
+@function radianes($number) {
+    @return $number * 3.14159265359 / 180;
+}
+
+@function explosion($number, $radio) {
+    $angle: 360/$number;
+    $text-shadow: '';
+    $coseno: 0;
+    $seno: 0;
+    @for $i from 1 through $number {
+        @if $i % 2==0 {
+            $seno: $radio* sin( radianes($angle*$i));
+            $coseno: $radio* cos(radianes($angle*$i));
+        }
+        @else {
+            $seno: $radio*0.5* sin( radianes($angle*$i));
+            $coseno: $radio*0.5* cos(radianes($angle*$i));
+        }
+        $text-shadow: $text-shadow+$coseno+' '+$seno;
+        @if $i< $number {
+            $text-shadow: $text-shadow+',';
+        }
+    }
+    @return unquote($text-shadow);
+}
+
+.m-heart {
+    --color: rgb(10, 183, 252);
+    margin: auto;
+    font-size: 2em;
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 7em;
+    left: 15em;
+    &.animate {
+        animation: exploit 1s;
+    }
+}
+
+@keyframes exploit {
+    to {
+        text-shadow: explosion(20, 200px);
+        color: transparent;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    --size: 500px;
+    height: var(--size);
+    width: var(--size);
+    position: absolute;
+    top: 1100px;
+    left: calc((500px - var(--size)/2));
+    right: calc((500px - var(--size)/2));
+    margin: auto;
+    animation: container 2s infinite linear;
+    @keyframes container {
+        to {
+            transform: rotate(-2turn);
+        }
+    }
+}
+
+.box {
+    --border1: hsl(0, 100, 50);
+    --border2: hsl(180, 100, 50);
+    width: 100%;
+    height: 100%;
+    border: 3px solid;
+    color: var(--border2);
+    position: absolute;
+    animation: border 2s infinite alternate linear;
+    @keyframes border {
+        to {
+            @for $a from 1 through 60 {
+                color: var(--border2);
+            }
+        }
+    }
+}
+
+@for $i from 1 through 60 {
+    .box:nth-child(#{$i}) {
+        color: hsl( $i*6, 100, 50);
+        --border2: hsl( $a*6+180, 100, 50);
+        transform: rotate(#{$i *6}deg) scale(#{1-($i/70)});
+    }
+}
+
+.smartphone-viewport {
+    --unit: 60px;
+    width: calc(var(--unit)*16);
+    height: calc(var(--unit)*9);
+    top: 400px;
+    position: relative;
+    background: url(https://www.viajejet.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada-1440x810.jpg) center center / cover;
+    overflow: hidden;
+    box-shadow: 0 20px 20px -10px #000;
+    margin: auto;
+    &::before {
+        content: "Practices Makes Perfect";
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #040e05;
+        font-size: 4em;
+        z-index: 10;
+        font-family: Open Sans;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent, rgba(#000, .6));
+    }
+}
+
+:root {
+    --animation-time: .3s;
+}
+
+$color:hsl(200, 100, 60);
+$elements:4;
+.float-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: $color;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 100;
+    transition: transform var(--animation-time);
+    cursor: pointer;
+    &.pulsed {
+        transform: rotate(45deg);
+        background: darken($color, 15);
+    }
+    &::before,
+    &::after {
+        position: absolute;
+        width: 40%;
+        height: 4%;
+        content: '';
+        top: 49%;
+        left: 30%;
+        background: #fff;
+    }
+    &::after {
+        transform: rotate(90deg);
+    }
+}
+
+.circular-menu {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    background: $color;
+    border-radius: 50%;
+    transform: scale(0) rotate(-360deg);
+    transition: all var(--animation-time);
+    opacity: 0;
+    z-index: 50;
+    bottom: -5.5rem;
+    right: -5.5rem;
+    &.expand {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.5rem;
+    }
+    i {
+        text-decoration: none;
+        color: #000;
+        display: block;
+        color: #ffffff;
+    }
+    li {
+        position: absolute;
+        width: 2rem;
+        top: 2rem;
+        left: calc(50% - 1rem);
+        transform-origin: center 6rem;
+        text-align: center;
+    }
+}
+
+@for $i from 2 through $elements {
+    .circular-menu li:nth-child(#{$i}) {
+        $rotation: (90/($elements - 1))*($i - 1);
+        transform: rotate(-#{$rotation}deg);
+        i {
+            transform: rotate(#{$rotation}deg);
+        }
+    }
+}
